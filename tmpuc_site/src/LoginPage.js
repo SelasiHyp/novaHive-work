@@ -1,7 +1,14 @@
 import React from "react";
 import "./Styles/LoginPage.css";
+import { useNavigate } from 'react-router-dom';
 
 function LoginPage(){
+
+  const navigate = useNavigate();
+  const handleLoginClick = () => {
+    navigate('/dashboard'); // Navigate to the About page
+  };
+
   return(
     <>
     <div className="page-background">
@@ -21,9 +28,9 @@ function LoginPage(){
         <div className="login-container">
         <p className="login-title">Log In</p>
         <p className="login-instruction">Enter your email and password to login to your account</p>
-        <input className="login-field" type="text" placeholder="Student's Mail" />
-        <input className="login-field" type="text" placeholder="Password" />
-        <button className="signIn-button"> Sign in</button>
+        <input className="login-field" type="email" placeholder="Student's Mail" />
+        <input className="login-field" type="password" placeholder="Password" />
+        <button onClick={handleLoginClick} className="signIn-button" > Sign in</button>
         </div>
       </div>
     </div>

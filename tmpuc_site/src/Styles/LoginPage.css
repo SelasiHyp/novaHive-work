@@ -10,25 +10,27 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 1;
 }
 
 .graduation-image{
   width: 50vw;
   height: 100vh;
+  filter: grayscale(100%);
 }
 
 .image-text-overlay{
   position: absolute;
   display: flex;
+  text-align: center;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  align-items: center;
   align-self: center;
   max-width: 600px;
   color: #fafafa;
-  background-color: rgba(121, 135, 145, 0.579);
-  padding: 20px;
+  background-color: rgba(154, 167, 171, 0.411);
+  padding: 15px;
 }
 
 .welcome-text{
@@ -53,6 +55,7 @@
   justify-content: center;
   /* background-color: blue; */
   width: 50%;
+  padding-bottom: 50px;
 }
 
 .login-title{
@@ -84,8 +87,42 @@
   font-family: 'Poppins';
   margin-top: 10px;
   padding: 10px;
+  cursor: pointer;
   max-width: 400px;
   border: none;
-  background: #e5b300;
+  background-color: #e5b300;
+  transition: background-color 0.3s;
   color: #fafafa;
+}
+
+.signIn-button:hover{
+  background-color: #f4cd42;;;
+}
+
+@media screen and (max-width: 780px) {
+  .page-background{
+    flex-direction: column;
+  }
+
+  .image-section{
+    flex-direction: row;
+    margin-bottom: 50px;
+  }
+
+  .graduation-image{
+    width: 100vw;
+    height: 50vh;
+  }
+
+  .welcome-text{
+    font-size: 34px;
+  }
+
+  .login-instruction{
+    font-size: -10px;
+  }
+
+  .welcome-message{
+    font-size: 14px;
+  }
 }
