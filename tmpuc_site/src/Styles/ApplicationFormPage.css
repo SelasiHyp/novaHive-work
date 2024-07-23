@@ -1,0 +1,175 @@
+.bgc{
+  flex-direction: column;
+  background-color: #fafafa;
+  flex: 1;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  display: flex;
+}
+
+.banner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner-image{
+  width: 100vw;
+  height: 50vh;
+  filter: blur(3px);
+  background-color: #13131e;
+}
+
+.page-title{
+  font-size: 54px;
+}
+
+.image-text{
+  position: absolute;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  max-width: 600px;
+  color: #fafafa;
+  padding: 15px;
+}
+
+.instructions-div{
+  max-width: 1000px;
+  text-align: justify;
+  justify-content: center;
+  align-self: center;
+  padding-top: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 30px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.red-text{
+  color: red;
+  text-decoration: underline;
+}
+
+hr{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.form-section-title{
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.gender-selection label {
+  margin-bottom: 5px;
+}
+
+.dob-gender-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-end; 
+  justify-content: space-between;
+  /* background-color: blue; */
+  max-width: 700px;
+}
+
+.gender-selection-container {
+  margin: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  gap: 5px; 
+  /* background-color: red; */
+  width: 50%;
+  font-size: 15px;
+}
+
+.gender-selection{
+  display: flex;
+  gap: 10px;
+}
+
+.disability-description{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+}
+
+.option-label {
+  font-size: 14px;
+  margin-bottom: .5em;
+  color: #333333;
+  display: block;
+}
+
+select {
+  border: 1px solid #CCCCCC;
+  padding: .3em;
+  font-size: 14px;
+  width: 100%;
+  max-width: 350px;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+  
+}
+
+.submit-button-div{
+  display: flex;
+  flex-direction:row-reverse;
+}
+
+
+.submit-button{
+  font-family: 'Poppins';
+  margin-top: 10px;
+  padding: 10px;
+  cursor: pointer;
+  max-width: 800px;
+  border: none;
+  background-color: #e5b300;
+  transition: background-color 0.3s;
+  color: #fafafa;
+}
+
+.submit-button:hover{
+  background-color: #f4cd42;;;
+}
+
+
+
+@media screen and (max-width: 780px) {
+  .page-background{
+    flex-direction: column;
+  }
+
+  .image-section{
+    flex-direction: row;
+    margin-bottom: 50px;
+  }
+
+  .banner-image{
+    width: 100vw;
+    height: 50vh;
+  }
+
+  .page-title{
+    font-size: 34px;
+  }
+
+  .login-instruction{
+    font-size: -10px;
+  }
+
+  .welcome-message{
+    font-size: 14px;
+  }
+}
