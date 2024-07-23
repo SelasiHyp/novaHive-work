@@ -6,7 +6,7 @@ function LoginPage(){
 
   const navigate = useNavigate();
   const handleLoginClick = () => {
-    navigate('/dashboard'); // Navigate to the About page
+    navigate('/ApplicationFormPage'); // Navigate to the dashboard page
   };
 
   return(
