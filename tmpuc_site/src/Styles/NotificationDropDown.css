@@ -1,0 +1,70 @@
+.notification-dropdown {
+  /* position: relative; */
+}
+
+.notification-dropdown-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #fff;
+  min-width: 250px;
+  max-height: 300px; /* Set max-height for the entire dropdown */
+  overflow-y: auto; /* Enable scrolling for the dropdown content */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  z-index: 1;
+  right: 0;
+  margin-right: 20px;
+  top: 60px;
+
+}
+
+.notification-item {
+  border-bottom: 1px solid #ddd;
+  padding: 0;
+}
+
+.notification-accordion {
+  font-family: 'Poppins';
+  background: #f8f9fa;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  text-align: left;
+  width: 100%;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.notification-accordion:hover {
+  background-color: #6b5959;
+}
+
+.notification-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.notification-panel.show {
+  max-height: none; /* Allow it to expand as needed */
+  overflow-y: auto;
+}
+
+.notification-panel-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-subitem {
+  padding: 3px;
+  background-color: #f1f1f1;
+  margin-bottom: 5px;
+  border: none;
+}
+
+.notification-subitem a {
+  text-decoration: none;
+  color: #333;
+}
