@@ -1,3 +1,12 @@
+/*
+This file is a mock datase for the student portal of the LMS.
+This Represent the information about a course that the lecturers or Admin would usually fill in
+when adding course, creating assignments etc. It helps simulate how data wouls appear when 
+uploaded by admin/lecturer. This info should be retrived from the database in final project.
+*/
+
+
+
 export const fetchData = (type) => {
   const dataSources = {
     courses: [
@@ -129,7 +138,8 @@ export const fetchData = (type) => {
                               and server-side technologies like Node.js. We will cover key concepts such as responsive design, web accessibility, and web performance optimization. By the end of this course, you will have 
                               a solid understanding of web development principles and the ability to create dynamic web applications that provide an engaging user experience. Whether you are new to web development or looking 
                               to enhance your existing skills, this course will guide you through the entire development process, from concept to deployment. Get ready to dive into the exciting world of web development 
-                              and start building your portfolio of professional-quality web projects!` },
+                              and start building your portfolio of professional-quality web projects!` 
+              },
             ],
            },
 
