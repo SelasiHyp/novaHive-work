@@ -1,0 +1,9 @@
+.overview-text-content{
+  font-size: 14px;
+  color: #000;
+  background-color: red;
+  display: flex;
+  max-width: 100%;
+
+  flex-direction: column;
+}
