@@ -46,7 +46,7 @@ function ResourcesPage() {
 
           
 
-        <FileUploadDownload/>
+        {/* <FileUploadDownload/> */}
         </div>
       </div>
     </div>
