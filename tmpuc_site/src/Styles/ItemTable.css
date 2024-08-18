@@ -10,8 +10,6 @@
 }
 
 .item-table {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   border-collapse: collapse;
 }
@@ -83,18 +81,17 @@
 .item-table th, .item-table td {
   text-align: left;
   padding: 10px;
-  white-space: nowrap; /* Prevents text from breaking into multiple lines */
+  /* white-space: nowrap; Prevents text from breaking into multiple lines */
 }
 
 @media screen and (max-width: 768px) {
   .item-table th, .item-table td {
-    font-size: 14px;
-    padding: 8px;
+    /* font-size: 14px; */
+    /* padding: 8px; */
   }
 
   .item-table {
-    display: flex;
-    flex-direction: column;
+    
     width: 100%;
     overflow-x: auto;
   }

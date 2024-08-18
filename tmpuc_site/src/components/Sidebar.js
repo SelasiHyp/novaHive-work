@@ -44,13 +44,13 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/Student/Overview" className="nav-link">
+            <Link to="/Student/MyProfile" className="nav-link">
               <span className="material-icons"><i className="fa-solid fa-user-large"></i></span>
               {isSidebarOpen && <span>Profile</span>}
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/" className="nav-link">
+            <Link to="/Student/Quizzes" className="nav-link">
               <span className="material-icons"><i className="fa-solid fa-list-check"></i></span>
               {isSidebarOpen && <span>Quizzes</span>}
             </Link>
@@ -59,12 +59,6 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
             <Link to="/" className="nav-link">
               <i className="material-icons"><i className="fa-sharp-duotone fa-solid fa-folder-open"></i></i>
               {isSidebarOpen && <span>Gradebook</span>}
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/" className="nav-link">
-              <span className="material-icons"><i className="fa-solid fa-gear"></i></span>
-              {isSidebarOpen && <span>Settings</span>}
             </Link>
           </li>
         </div>

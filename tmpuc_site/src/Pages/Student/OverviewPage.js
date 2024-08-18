@@ -58,25 +58,25 @@ const Overview = () => {
                     </div>
 
                     {overviewData.map(item => (
-                        <div key={item.id} className='grid'>
+                        <div key={item.id} className='overview-grid'>
                             <div className='overview-text-content'>
                                 <h2>{item.name}</h2>
                                 <p>{item.description}</p>
                             </div>
 
-                            <div>
+                            <div className='overview-div'>
                                 <h2>Notifications</h2>
                                 <ItemTable data={notifications} />
                             </div>
 
-                            <div>
-                                <h2>Assignments</h2>
-                                <ItemTable data={assignments} />
-                            </div>
-
-                            <div>
+                            <div className='overview-div'>
                                 <h2>Quizzes</h2>
                                 <ItemTable data={quizzes} />
+                            </div>
+
+                            <div className='overview-div'>
+                                <h2>Assignments</h2>
+                                <ItemTable data={assignments} />
                             </div>
                         </div>
                     ))}

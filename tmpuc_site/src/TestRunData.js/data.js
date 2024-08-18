@@ -9,6 +9,26 @@ uploaded by admin/lecturer. This info should be retrived from the database in fi
 
 export const fetchData = (type) => {
   const dataSources = {
+
+    profile:[
+      {
+        profilePicture: '',
+        saySomething: 'I love TMPUC!',
+        firstName: 'Lara',
+        otherNames: 'Elizabeth',
+        lastName: 'Croft',
+        dateOfBirth: '28/08/2002',
+        gender: 'Female',
+        phoneNumber: "0501234567",
+        email: 'lara_é_raider@gmail.com',
+        schoolIdNumber: '00000001',
+        department: 'Department of Information Technology',
+        program: 'Software engineering',
+        programType: 'Professional Diploma',
+
+      }
+    ],
+
     courses: [
       {
         title: 'Course 1',
@@ -186,22 +206,24 @@ export const fetchData = (type) => {
     ],
 
     resources: [
-      { id: 1, name: 'Resource 1', description: 'This is Resource 1' },
-      { id: 2, name: 'Resource 2', description: 'This is Resource 2' },
-      { id: 3, name: 'Resource 3', description: 'This is Resource 3' },
-      { id: 4, name: 'Resource 4', description: 'This is Resource 4' }
+      { id: 1, name: 'Resource 1', description: 'This is Resource 1', creator: 'Jane Smith', date: '2024-08-07', title: 'New Assignment' },
+      { id: 2, name: 'Resource 2', description: 'This is Resource 2', creator: 'Jane Smith', date: '2024-08-07', title: 'New Assignment' },
+      { id: 3, name: 'Resource 3', description: 'This is Resource 3', creator: 'Jane Smith', date: '2024-08-07', title: 'New Assignment' },
+      { id: 4, name: 'Resource 4', description: 'This is Resource 4', creator: 'Jane Smith', date: '2024-08-07', title: 'New Assignment' }
     ],
     assignments: [
-      { id: 1, name: 'Assignment 1', description: 'This is Assignment 1' },
-      { id: 2, name: 'Assignment 2', description: 'This is Assignment 2' },
-      { id: 3, name: 'Assignment 3', description: 'This is Assignment 3' },
-      { id: 4, name: 'Assignment 4', description: 'This is Assignment 4' }
+      { id: 1, name: 'Assignment 1', description: 'This is Assignment 1', creator: 'Jane Smith', date: '2024-08-07', title: 'New Assignment 1' },
+      { id: 2, name: 'Assignment 2', description: 'This is Assignment 2', creator: 'Jane Smith', date: '2024-08-07', title: 'New Assignment 2' },
+      { id: 3, name: 'Assignment 3', description: 'This is Assignment 3', creator: 'Jane Smith', date: '2024-08-07', title: 'New Assignment 3' },
+      { id: 4, name: 'Assignment 4', description: 'This is Assignment 4', creator: 'Jane Smith', date: '2024-08-07', title: 'New Assignment 4' },
+      { id: 5, name: 'Assignment 5', description: 'This is Assignment 5', creator: 'Jane Smith', date: '2024-08-07', title: 'New Assignment 5' }
+
     ],
     quizzes: [
-      { id: 1, name: 'Quiz 1', description: 'This is Quiz 1' },
-      { id: 2, name: 'Quiz 2', description: 'This is Quiz 2' },
-      { id: 3, name: 'Quiz 3', description: 'This is Quiz 3' },
-      { id: 4, name: 'Quiz 4', description: 'This is Quiz 4' }
+      { id: 1, name: 'Quiz 1', description: 'This is Quiz 1', creator: 'Jane Smith', date: '2024-08-07', title: 'New Quiz 1' },
+      { id: 2, name: 'Quiz 2', description: 'This is Quiz 2', creator: 'Jane Smith', date: '2024-08-07', title: 'New Quiz 2' },
+      { id: 3, name: 'Quiz 3', description: 'This is Quiz 3', creator: 'Jane Smith', date: '2024-08-07', title: 'New Quiz 3' },
+      { id: 4, name: 'Quiz 4', description: 'This is Quiz 4', creator: 'Jane Smith', date: '2024-08-07', title: 'New Quiz 4' }
     ],
     notificationsPageList: [
       { id: 1, name: 'Notification 1', description: 'This is Notification 1', creator: 'Jane Smith', date: '2024-08-07', title: 'New Assignment' },

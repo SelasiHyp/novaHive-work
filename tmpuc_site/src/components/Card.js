@@ -9,6 +9,10 @@ const Card = ({ title, data, count, showCount, seeMore, pageType }) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  // Determine the items to display
+  const itemsToShow = data.slice(0, 3);
+  const shouldShowSeeMore = data.length > 3;
+
   return (
     <div className='card'>
       <div className="card-header">
@@ -17,7 +21,7 @@ const Card = ({ title, data, count, showCount, seeMore, pageType }) => {
           <span className='count'>{count}</span>
         )}
       </div>
-      {data.map((item, index) => {
+      {itemsToShow.map((item, index) => {
         // Assign courseId to item.id
         const courseId = item.id;
 
@@ -49,7 +53,7 @@ const Card = ({ title, data, count, showCount, seeMore, pageType }) => {
           </div>
         );
       })}
-      {data.length > 3 && seeMore && (
+      {shouldShowSeeMore && seeMore && (
         <div className="see-more">
           <Link to={seeMore}>See More</Link>
         </div>

@@ -39,9 +39,6 @@
   transition: 0.2s;
 }
 
-.accordion:hover {
-  background-color: #e9e9e9;
-}
 
 .accordion .active {
   transform: rotate(180deg);
@@ -77,61 +74,6 @@
   border-radius: 60%;
 }
 
-.card-list {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 0;
-}
-
-/* .item-header{
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-} */
-
-.active, .card-item:hover {
-  /* background-color: #ccc; */
-}
-
-.card-item {
-  background-color: #4c6eb1;
-  height: 20px;
-  width: 50%;
-  margin: 5px 0;
-  padding-left: 10px;
-  cursor: pointer;
-  border-bottom: 1px solid #ccc;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-}
-
-
-
-.card .subitem-list {
-  padding: 0 18px;
-  background-color: blue;
-
-  /* display: none; */
-  background-color: white;
-  /* overflow: hidden; */
-}
-
-.card .subitem  {
-  z-index: 999;
-  text-decoration: none;
-  list-style-type: none;
-
-  /* padding: 5px 0; */
-}
-
  .card .subitem a{
   margin: 0;
   padding-left: 22px;
@@ -151,28 +93,6 @@
   transition: 0.2s;
 }
 
- /* .card .accordion {
-  background-color: #fff;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none; */
-  /* border-width: 0.5px; */
-  /* border-left: none ;
-  border-right: none;
-  border-bottom: none; */
-  /* border-color: #ccc; */
-  /* text-align: left;
-  outline: none;
-  font-size: 16px;
-  transition: 0.2s;
-} */
-
-.card .accordion:hover{
-  background-color: #e9e9e9;
-}
-
 .card .active {
   background-color: #1e1c85;
   color: rgb(255, 234, 0);
@@ -182,24 +102,6 @@
 
 .card .active:hover{
   background-color: #1e1c85;
-}
-
-.card .panel {
-  display: none;
-  background-color: gray;
-  overflow: hidden;
-}
-
-.card .panel-items{
-  background-color: gray;
-  text-decoration: none;
-  
-}
-
-.card .panel.show {
-  background-color: gray;
-  display: block;
-
 }
 
 .card .course-border-top-bottom {

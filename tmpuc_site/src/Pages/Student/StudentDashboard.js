@@ -10,6 +10,9 @@ import { fetchData } from '../../TestRunData.js/data';
 function StudentDashboard() {
   const courseData = fetchData('courses'); // Fetch course data
   const notificationData = fetchData('notificationsPageList'); // Fetch notification data
+  const assignmentData = fetchData('assignments'); // Fetch notification data
+  const quizData = fetchData('quizzes'); // Fetch notification data
+
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   // const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State for dropdown
@@ -53,76 +56,29 @@ function StudentDashboard() {
               data={notificationData}
               count={notificationData.length}
               showCount={true}
-              seeMore='/NotificationPage'
+              seeMore='/Student/Notifications'
               pageLink='/NotificationPage'
             />
 
             <Card
               title='Upcoming Quizzes'
-              data = {courseData}
+              data = {quizData}
               pageLink='/QuizzesPage'
+              seeMore='/Student/Quizzes'
+
             />
 
             <Card
               title='Assignments'
-              data = {courseData}
-              count={courseData.length}
+              data = {assignmentData}
+              count={assignmentData.length}
               showCount={true}
               pageLink='/AssignmentPage'
+              seeMore='/Student/Assignments'
+
             />
 
             </div>
-          
-          {/* <div className="grid">
-            <div className="card">
-              <div className="card-body">
-              <img className='image' src="/simple-flat-calendar-page-icon-black-and-white-vector-22987510.jpg" alt="im" />
-                <canvas id="chart-1"></canvas>
-              </div>
-              <div className="card-footer">
-                <div className="card-footer-title">Calendar</div>
-                <div className="card-footer-info">
-                  Upcomng Events
-                </div>
-                <div className="card-footer-actions">
-                  <span className="material-icons"></span>
-                </div>
-              </div>
-            </div> */}
-            {/* <div className="card">
-              <div className="card-body">
-              <img className='image' src="/OIP.jpeg" alt="im" />
-
-                <canvas id="chart-2">
-                </canvas>
-              </div>
-              <div className="card-footer">
-                <div className="card-footer-title">Resouces</div>
-                <div className="card-footer-info">
-                </div>
-                <div className="card-footer-actions">
-                  <span className="material-icons">View All Course Material</span>
-                </div>
-              </div>
-            </div> */}
-            {/* <div className="card">
-
-              <div className="card-body">
-              <img className='image' src="/11_-_Exam_Results-512.webp" alt="im" />
-
-                <canvas id="chart-3"></canvas>
-              </div>
-              <div className="card-footer">
-                <div className="card-footer-title">Gradebook</div>
-                <div className="card-footer-info">
-                </div>
-                <div className="card-footer-actions">
-                  <span className="material-icons"></span>
-                  Just updated
-                </div>
-              </div>
-            </div> */}
-          {/* </div> */}
           
         </div>
       </div>

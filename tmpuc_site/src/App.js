@@ -10,6 +10,8 @@ import AssignmentPage from './Pages/Student/AssignmentPage';
 import NotificationPage from './Pages/Student/NotificationPage';
 import CoursePage from './Pages/Student/CoursePage';
 import Overview from './Pages/Student/OverviewPage';
+import StudentProfile from './Pages/Student/StudentProfilePage';
+import QuizPage from './Pages/Student/QuizzesPage';
 
 
 function App() {
@@ -29,11 +31,8 @@ function App() {
           <Route path="/Student/Notifications" element={<NotificationPage />} />
           <Route path="/:courseId/:pageType" element={<CoursePage />} />
           <Route path="/Student/:courseId/Overview" element={<Overview/>} />
-
-
-
-          
-
+          <Route path="/Student/MyProfile" element={<StudentProfile />} />
+          <Route path="/Student/Quizzes" element={<QuizPage />} />
 
         </Routes>
     </Router>
