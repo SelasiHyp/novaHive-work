@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/novaHive-work/static/css/main.4bdb47e4.css",
+    "main.js": "/novaHive-work/static/js/main.4b62525d.js",
+    "static/js/453.753fba9f.chunk.js": "/novaHive-work/static/js/453.753fba9f.chunk.js",
+    "static/media/logo2.png": "/novaHive-work/static/media/logo2.a93f113214a94d630030.png",
+    "static/media/Image7.png": "/novaHive-work/static/media/Image7.953368dd6c08c3c229e4.png",
+    "static/media/Image4.png": "/novaHive-work/static/media/Image4.195114142bce1f3199f3.png",
+    "static/media/Image5.png": "/novaHive-work/static/media/Image5.94234493a49bb8acb320.png",
+    "static/media/Image2.png": "/novaHive-work/static/media/Image2.ee437d13033e2377f257.png",
+    "static/media/Image8.png": "/novaHive-work/static/media/Image8.c225ddae4157966a4308.png",
+    "static/media/Image12.png": "/novaHive-work/static/media/Image12.258e025ac536ab696f80.png",
+    "static/media/Image15.png": "/novaHive-work/static/media/Image15.ce0a5a261cbbb291e9a2.png",
+    "static/media/Image3.png": "/novaHive-work/static/media/Image3.4124d30b27b03cf5e291.png",
+    "static/media/Image9.png": "/novaHive-work/static/media/Image9.186223f101580c5b7125.png",
+    "static/media/Image.png": "/novaHive-work/static/media/Image.e4f2d1e426544dde6b2d.png",
+    "static/media/Image1.png": "/novaHive-work/static/media/Image1.d238ebacaae770d24aeb.png",
+    "static/media/Image13.png": "/novaHive-work/static/media/Image13.b4be63245fa086b2db49.png",
+    "static/media/vid.jpg": "/novaHive-work/static/media/vid.a0901e7be1a12bb9140c.jpg",
+    "static/media/background.jpg": "/novaHive-work/static/media/background.4d3e7123dd047a1ec9e5.jpg",
+    "static/media/grad3.jpg": "/novaHive-work/static/media/grad3.4d3e7123dd047a1ec9e5.jpg",
+    "static/media/Image11.png": "/novaHive-work/static/media/Image11.d22e14f3624711394cc6.png",
+    "static/media/grad2.jpg": "/novaHive-work/static/media/grad2.4145b47a8d3cf1326620.jpg",
+    "static/media/Image10.png": "/novaHive-work/static/media/Image10.0c6bb47916c48af26313.png",
+    "static/media/grad.jpg": "/novaHive-work/static/media/grad.3589be9fb935e9c1efc9.jpg",
+    "static/media/logo1.png": "/novaHive-work/static/media/logo1.06c2c88219997cbcf60a.png",
+    "index.html": "/novaHive-work/index.html",
+    "main.4bdb47e4.css.map": "/novaHive-work/static/css/main.4bdb47e4.css.map",
+    "main.4b62525d.js.map": "/novaHive-work/static/js/main.4b62525d.js.map",
+    "453.753fba9f.chunk.js.map": "/novaHive-work/static/js/453.753fba9f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4bdb47e4.css",
+    "static/js/main.4b62525d.js"
+  ]
+}
