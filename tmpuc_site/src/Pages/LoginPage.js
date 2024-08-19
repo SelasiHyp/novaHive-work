@@ -15,7 +15,7 @@ function LoginPage() {
 
         if (token) {
             localStorage.setItem('token', token); // Store token for authenticated routes
-            navigate('/ApplicationFormPage'); // Navigate to the application form page
+            navigate('/ApplicationForm'); // Navigate to the application form page
         } else {
             throw new Error('Token not received');
         }
