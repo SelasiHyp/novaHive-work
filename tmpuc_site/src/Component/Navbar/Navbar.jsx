@@ -24,7 +24,7 @@ const Navbar = () => {
             <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/courses">Courses</Link></li>
-                <li><Link to="/LMS">LMS Core</Link></li>
+                <li><Link to="/LoginPageLMS">LMS Core</Link></li>
                 {/* <li><Link to="/campus">Campus</Link></li> */}
                 <li><Link to="/testimonials">Testimonials</Link></li>
                 <li><Link to="/LoginPage"><button className='btn'>Apply Now</button></Link></li>

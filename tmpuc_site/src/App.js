@@ -9,14 +9,19 @@ import Courses from './Component/Courses/Courses';
 import Testimonials from './Component/Testimonials/Testimonials';
 import LoginPage from './Pages/LoginPage';
 import ApplicationForm from './Pages/ApplicationFormPage';
+import StudentDashboard from './Pages/Student/StudentDashboard';
 import LayoutWithNavbar from './components/LayoutWithNavbar'; // Import the layout component
+import LoginPageLMS from './Pages/LoginPageLMS';
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/LoginPage" element={<LoginPage />} />
-        <Route path="/ApplicationForm" element={<ApplicationForm/>} />{/* Route without Navbar */}
+        <Route path="/LoginPageLMS" element={<LoginPageLMS />} />
+        <Route path="/ApplicationForm" element={<ApplicationForm/>} />
+        <Route path="/StudentDashboard" element={<StudentDashboard/>} />
+        {/* Route without Navbar */}
         <Route path="/" element={
           <LayoutWithNavbar>
             <Hero />
