@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import './Styles/ApplicationFormPage.css';
-import LabeledInput from "./components/FormInputs"; 
-import FormCheckbox from './components/FormCheckbox';
-import CourseSelection from './components/FormCourseSelection';
-import ItemList from './components/FormItemList';
+import '../Styles/ApplicationFormPage.css';
+import LabeledInput from "../components/FormInputs"; 
+import FormCheckbox from '../components/FormCheckbox';
+import CourseSelection from '../components/FormCourseSelection';
+import ItemList from '../components/FormItemList';
+import { useNavigate } from 'react-router-dom';
+
 
 const ApplicationForm = () => {
   const [toggles, setToggles] = useState({
@@ -27,6 +29,7 @@ const ApplicationForm = () => {
     setSelectedOption(e.target.value);
   };
 
+<<<<<<< HEAD:tmpuc_site/src/ApplicationFormPage.js
   const [formData, setFormData] = useState({
     studentFirstName: '',
     studentLastName: '',
@@ -111,17 +114,28 @@ const ApplicationForm = () => {
       alert('An error occurred. Please check your network connection and try again.');
     }
   };
+=======
+  const navigate = useNavigate();
+  const handleSubmit = () => {
+    navigate('/Student/Dashboard'); // Navigate to the dashboard page
+  };
+
+>>>>>>> 254b25cdd71da69d3a12bba79dfc3aa06d910a32:tmpuc_site/src/Pages/ApplicationFormPage.js
   return(    
     <div className="bgc">
-      <div className="banner">
+      {/* <div className="banner">
         <img className="banner-image" src='/Rectangle 85.png' alt="graduates" />
         <div className="image-text">
           <h2 className="page-title">Admission Form<br/></h2>
           <p className="welcome-message">Apply Now!</p>
         </div> 
-      </div>
+      </div> */}
 
       <div className="instructions-div">
+        <div className="image-text">
+          <h2 className="page-title">Admission Form<br/></h2>
+          <p className="welcome-message">Apply Now!</p>
+        </div> 
         <div>
           <p>
             Please read all the information on this form carefully before completing the form. 
@@ -478,8 +492,10 @@ const ApplicationForm = () => {
                   />
               </div>
             )} 
-          </div>  
-       
+          </div> 
+
+          <br />
+
 
           <div>
             <p>2. Have you ever been dismissed or suspended from an academic institution?</p>
@@ -533,6 +549,8 @@ const ApplicationForm = () => {
             )}
           </div>
 
+          <br />
+
           <div>
             <FormCheckbox
               id="livesAlone"
@@ -550,6 +568,8 @@ const ApplicationForm = () => {
               onChange={(e) => handleCheckboxChange(e, 'question3')}
             />
           </div>
+
+          <br />
 
           <div>
             <h4>Preferred Campus</h4>
@@ -595,7 +615,8 @@ const ApplicationForm = () => {
                 <option value="option1">WASSCE</option>
                 <option value="option2">SSCE</option>
                 <option value="option3">HND</option>
-                <option value="option4">B.Sc</option>
+                <option value="option4">B.Sc</option> 
+                {/* Ask for other accepted certificates */}
               </select>
             </div>
 
@@ -641,6 +662,8 @@ const ApplicationForm = () => {
 
           </div>
 
+          <br />
+
           <div>
             <FormCheckbox required
               style={{alignSelf: 'start', margin: '6px 0px'}}
@@ -655,6 +678,8 @@ const ApplicationForm = () => {
               name="toggle"
             />
           </div>
+          
+          <br />
 
           <div>
             <h4>Session of Choice</h4>
@@ -718,7 +743,11 @@ const ApplicationForm = () => {
         </div>
 
         <div className='submit-button-div'>
+<<<<<<< HEAD:tmpuc_site/src/ApplicationFormPage.js
           <button className='submit-button' onClick={handleSubmit}>Submit</button> 
+=======
+          <button onClick={handleSubmit} className='submit-button'>Submit</button> 
+>>>>>>> 254b25cdd71da69d3a12bba79dfc3aa06d910a32:tmpuc_site/src/Pages/ApplicationFormPage.js
         </div>
 
       </div>
