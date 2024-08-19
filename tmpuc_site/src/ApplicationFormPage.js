@@ -27,6 +27,90 @@ const ApplicationForm = () => {
     setSelectedOption(e.target.value);
   };
 
+  const [formData, setFormData] = useState({
+    studentFirstName: '',
+    studentLastName: '',
+    studentOtherNames: '',
+    studentDateOfBirth: '',
+    studentGender: '',
+    studentPhoneNumber: '',
+    studentEmail: '',
+    studentNationality: '',
+    studentHometown: '',
+    studentResidentTown: '',
+    studentRegion: '',
+    studentCountry: '',
+    studentDigitalPostAddress: '',
+    studentIdType: '',
+    studentIdNumber: '',
+    parentFirstName: '',
+    parentLastName: '',
+    parentOtherNames: '',
+    parentPhoneNumber: '',
+    parentRelationship: '',
+    parentEmail: '',
+    parentAddress: '',
+    sponsorName: '',
+    sponsorPhoneNumber: '',
+    sponsorEmail: '',
+    sponsorAddress: '',
+    isResidential: false,
+    isNonResidential: false,
+    disabilityDescription: '',
+    suspendedInstitutionName: '',
+    suspendedInstitutionCountry: '',
+    suspensionYear: '',
+    suspensionReason: '',
+    livesAlone: false,
+    livesWithParents: false,
+    campusChoice: '',
+    sessionChoice: '',
+    highSchoolAttended: '',
+    programType: '',
+    programPeriod: '',
+    universityAttended: '',
+    degreeName: '',
+    otherAchievements: '',
+  });
+
+  const handleInputChange = (e) => {
+    const { id, value, name, type, checked } = e.target;
+    const key = type === 'radio' ? name : id;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,[key]: type === 'checkbox' ? checked : value,
+    }));
+  };
+
+  // const handleCheckboxInputChange = (e) => {
+  //   const { id, checked } = e.target;
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     [id]: checked,
+  //   }));
+  // };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('http://localhost:3000/auth/submitAdmission', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('Application submitted successfully!');
+      } else {
+        alert('Failed to submit application. Please try again.');
+      }
+    } catch (error) {
+      alert('An error occurred. Please check your network connection and try again.');
+    }
+  };
   return(    
     <div className="bgc">
       <div className="banner">
@@ -64,31 +148,39 @@ const ApplicationForm = () => {
           <p className="form-section-title">Personal Details</p>
           <LabeledInput
             label="First Name"
-            id="student_firstName"
+            id="studentFirstName"
             type="text"
             placeholder="Enter your first name"
+            value={formData.studentFirstName}
+            onChange={handleInputChange}
           />
 
           <LabeledInput
             label="Last Name/Surname"
-            id="student_lastName"
+            id="studentLastName"
             type="text"
             placeholder="Enter your last name/surname"
+            value={formData.studentLastName}
+            onChange={handleInputChange}
           />
 
           <LabeledInput
-            label="Other Names"
-            id="student_otherNames"
+           label="Other Names"
+            id="studentOtherNames"
             type="text"
             placeholder="Enter your other names" 
+            value={formData.studentOtherNames}
+            onChange={handleInputChange}
           />
 
           <div className="dob-gender-container">
             <LabeledInput  
-              label="Date of Birth"
-              id="student_dateOfBirth"
+             label="Date of Birth"
+              id="studentDateOfBirth"
               type="date"
               placeholder="" 
+              value={formData.studentDateOfBirth}
+              onChange={handleInputChange}
             /> 
             <div className="gender-selection-container">
               <p>Gender</p>
@@ -96,17 +188,21 @@ const ApplicationForm = () => {
                 <label>
                     <input
                       type="radio"
-                      name="gender"
+                      name="studentGender" // Ensure the name matches the state property
                       value="male"
+                      checked={formData.studentGender === 'male'}
+                      onChange={handleInputChange}
                     />
                     Male
                   </label>
 
                   <label>
                     <input
-                      type="radio"
-                      name="gender"
+                     type="radio"
+                      name="studentGender" // Ensure the name matches the state property
                       value="female"
+                      checked={formData.studentGender === 'female'}
+                      onChange={handleInputChange}
                     />
                     Female
                   </label>
@@ -116,74 +212,95 @@ const ApplicationForm = () => {
 
           <LabeledInput
             label="Phone Number"
-            id="student_phoneNumber"
+            id="studentPhoneNumber"
             type="text"
-            placeholder="Enter your phone number" 
+            placeholder="Enter your phone number"
+            value={formData.studentPhoneNumber}
+            onChange={handleInputChange}
           />
 
           <LabeledInput
-            label="Email"
-            id="student_email"
+           label="Email"
+            id="studentEmail"
             type="email"
             placeholder="Enter your email"
+            value={formData.studentEmail}
+            onChange={handleInputChange}
+            
           />
 
           <div className='dob-gender-container'>
             <LabeledInput
               label="Nationality"
-              id="student_nationality"
-              type="text"
-              placeholder="Your nationality"
+            id="studentNationality"
+            type="text"
+            placeholder="Enter your nationality"
+            value={formData.studentNationality}
+            onChange={handleInputChange}
             />
             <LabeledInput
               label="Hometown"
-              id="student_hometown"
-              type="text"
-              placeholder="Your hometown"
+            id="studentHometown"
+            type="text"
+            placeholder="Enter your hometown"
+            value={formData.studentHometown}
+            onChange={handleInputChange}
             />
           </div>
 
           <div className='dob-gender-container'>
             <LabeledInput
-              label="Resident Town"
-              id="student_residentTown"
-              type="text"
-              placeholder="Your resident town/city"
+             label="Resident Town"
+            id="studentResidentTown"
+            type="text"
+            placeholder="Enter your resident town"
+            value={formData.studentResidentTown}
+            onChange={handleInputChange}
             />
             <LabeledInput
-              label="State/Province/Region"
-              id="student_region"
-              type="text"
-              placeholder="Your state/province/region"
+               label="Region"
+            id="studentRegion"
+            type="text"
+            placeholder="Enter your region"
+            value={formData.studentRegion}
+            onChange={handleInputChange}
             />
           </div>
 
           <LabeledInput
               label="Country"
-              id="student_country"
-              type="country"
-              placeholder="Enter country of residence"
+            id="studentCountry"
+            type="text"
+            placeholder="Enter your country"
+            value={formData.studentCountry}
+            onChange={handleInputChange}
             />
 
             <LabeledInput
-              label="Digital Post Address"
-              id="student_digitalPostAddress"
-              type="text"
-              placeholder="Enter your digital post address"
+               label="Digital Post Address"
+            id="studentDigitalPostAddress"
+            type="text"
+            placeholder="Enter your digital post address"
+            value={formData.studentDigitalPostAddress}
+            onChange={handleInputChange}
             />
           
           <div className='dob-gender-container'>
             <LabeledInput
-              label="ID Type"
-              id="student_residentTown"
-              type="text"
-              placeholder="NHIS, Driver's License, etc."
+              label="National ID Type"
+            id="studentIdType"
+            type="text"
+            placeholder="Enter your ID type"
+            value={formData.studentIdType}
+            onChange={handleInputChange}
             />
             <LabeledInput
-              label="ID Number"
-              id="student_region"
-              type="text"
-              placeholder="Enter ID number of selected ID type"
+               label="National ID Number"
+            id="studentIdNumber"
+            type="text"
+            placeholder="Enter your ID number"
+            value={formData.studentIdNumber}
+            onChange={handleInputChange}
             />
           </div>  
         </div>
@@ -193,53 +310,67 @@ const ApplicationForm = () => {
         <div> {/*PARENTS */}
           <p className="form-section-title">Parent/Guardian Details</p>
           <LabeledInput
-            label="First Name"
-            id="parent_firstName"
+             label="First Name"
+            id="parentFirstName"
             type="text"
-            placeholder="Parent/Guardian's first name"
+            placeholder="Enter parent/guardian first name"
+            value={formData.parentFirstName}
+            onChange={handleInputChange}
           />
 
           <LabeledInput
-            label="Last Name/Surname"
-            id="parent_lastName"
+           label="Last Name/Surname"
+            id="parentLastName"
             type="text"
-            placeholder="Parent/Guardian's last name/surname"
+            placeholder="Enter parent/guardian last name/surname"
+            value={formData.parentLastName}
+            onChange={handleInputChange}
           />
 
           <LabeledInput
             label="Other Names"
-            id="parent_otherNames"
+            id="parentOtherNames"
             type="text"
-            placeholder="Parent/Guardian's other names" 
+            placeholder="Enter parent/guardian other names"
+            value={formData.parentOtherNames}
+            onChange={handleInputChange} 
           />
 
           <div className='dob-gender-container'>
             <LabeledInput
               label="Phone Number"
-              id="parent_phoneNumber"
-              type="phone"
-              placeholder="Parent/Guardian's phone number"
+            id="parentPhoneNumber"
+            type="text"
+            placeholder="Enter parent/guardian phone number"
+            value={formData.parentPhoneNumber}
+            onChange={handleInputChange}
             />
             <LabeledInput
-              label="Relationship"
-              id="parent_relationship"
-              type="text"
-              placeholder="Relationship to student"
+                label="Relationship"
+            id="parentRelationship"
+            type="text"
+            placeholder="Enter parent/guardian relationship to applicant"
+            value={formData.parentRelationship}
+            onChange={handleInputChange}
             />
           </div>
 
           <LabeledInput
-            label="Email"
-            id="parent_email"
+             label="Email"
+            id="parentEmail"
             type="email"
-            placeholder="Parent/Guardian's email"
+            placeholder="Enter parent/guardian email"
+            value={formData.parentEmail}
+            onChange={handleInputChange}
           />
 
           <LabeledInput
-            label="Address"
-            id="parent_address"
+           label="Address"
+            id="parentAddress"
             type="text"
-            placeholder="Parent/Guardian's address"
+            placeholder="Enter parent/guardian address"
+            value={formData.parentAddress}
+            onChange={handleInputChange}
           />
         </div> 
 
@@ -249,31 +380,39 @@ const ApplicationForm = () => {
           <p className="form-section-title">Sponsor's Details</p>
 
           <LabeledInput
-            label="Name"
-            id="sponsor_name"
+           label="Name"
+            id="sponsorName"
             type="text"
-            placeholder="Sponsor's Name"
+            placeholder="Enter sponsor's name"
+            value={formData.sponsorName}
+            onChange={handleInputChange}
           />
           <div className='dob-gender-container'>
             <LabeledInput
-              label="Phone Number"
-              id="sponsor_phoneNumber"
-              type="phone"
-              placeholder="Sponsor's Phone number"
+               label="Phone Number"
+            id="sponsorPhoneNumber"
+            type="text"
+            placeholder="Enter sponsor's phone number"
+            value={formData.sponsorPhoneNumber}
+            onChange={handleInputChange}
             />
             <LabeledInput
-              label="Email"
-              id="sponsor_email"
-              type="email"
-              placeholder="Sponsor's Email"
+               label="Email"
+            id="sponsorEmail"
+            type="email"
+            placeholder="Enter sponsor's email"
+            value={formData.sponsorEmail}
+            onChange={handleInputChange}
             />
           </div>
 
           <LabeledInput
-            label="Address"
-            id="sponsor_address"
+             label="Address"
+            id="sponsorAddress"
             type="text"
-            placeholder="Sponsor's Address"
+            placeholder="Enter sponsor's address"
+            value={formData.sponsorAddress}
+            onChange={handleInputChange}
           />
         </div>
 
@@ -283,16 +422,18 @@ const ApplicationForm = () => {
           <p className="form-section-title">Hostel</p>
 
           <FormCheckbox
-            label="Residential Student (Hostel Facilty)"
-            id="resident"
+            label="Residential Student (Hostel Facility)"
+            id="isResident"
             type='checkbox'
-
-          />
+            checked={formData.isResidential}
+            onChange={handleInputChange}
+            />
 
           <FormCheckbox
-            label="Non-Residential Student"
-            id="resident"
-            type='checkbox'
+            type="checkbox"
+            id="isNonResidential"
+            checked={formData.isNonResidential}
+            onChange={handleCheckboxChange}
           />
         </div>
 
@@ -307,21 +448,23 @@ const ApplicationForm = () => {
             </p>
 
             <FormCheckbox
-              id="hasNoDisablity"
+              id="hasNoDisability"
               type='radio'
               label="No"
               name="toggle1"
               value="no"
+              checked={formData.hasNoDisability}
               onChange={(e) => handleCheckboxChange(e, 'question1')}
             />
 
             <FormCheckbox
-              id="hasDisablity"
+              id="hasDisability"
               type='radio'
               label="Yes"
               name="toggle1"
               value="yes"
               onChange={(e) => handleCheckboxChange(e, 'question1')}
+              checked={formData.hasDisability}
             />
 
             {toggles.question1 && (
@@ -330,6 +473,8 @@ const ApplicationForm = () => {
                     label="Please provide a brief explanation of the disability/learning difficulty."
                     id="disabilityDescription"
                     type="text"
+                    value={formData.disabilityDescription}
+                    onChange={handleInputChange}
                   />
               </div>
             )} 
@@ -369,6 +514,7 @@ const ApplicationForm = () => {
                   label="Country"
                   id="suspendedInstitutionCountry"
                   type="text"
+                  
                 />
 
                 <LabeledInput
@@ -572,7 +718,7 @@ const ApplicationForm = () => {
         </div>
 
         <div className='submit-button-div'>
-          <button className='submit-button'>Submit</button> 
+          <button className='submit-button' onClick={handleSubmit}>Submit</button> 
         </div>
 
       </div>

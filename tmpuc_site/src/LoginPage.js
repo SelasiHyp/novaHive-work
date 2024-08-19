@@ -1,39 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Styles/LoginPage.css";
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-function LoginPage(){
-
+function LoginPage() {
   const navigate = useNavigate();
-  const handleLoginClick = () => {
-    navigate('/ApplicationFormPage'); // Navigate to the dashboard page
-  };
+  const [pin, setVoucherPin] = useState('');
+  const [password, setPassword] = useState('');
 
-  return(
+  const handleLoginClick = async () => {
+    try {
+        const response = await axios.post('http://localhost:3000/auth/login', { pin, password }); // Adjusted URL
+        const { token } = response.data; // Destructure token from response data
+
+        if (token) {
+            localStorage.setItem('token', token); // Store token for authenticated routes
+            navigate('/ApplicationFormPage'); // Navigate to the application form page
+        } else {
+            throw new Error('Token not received');
+        }
+    } catch (error) {
+        console.error('Login failed', error);
+        alert('Login failed. Please check your voucher pin and password.');
+    }
+};
+
+  return (
     <>
-    <div className="page-background">
-      <div className="image-section">
-        <img className="graduation-image" src='/Rectangle 85.png' alt="graduates" />
-        <div className="image-text-overlay">
-          <h2 className="welcome-text">Welcome to <br/>TM Pre-University College<br/></h2>
-          <p className="welcome-message">
-            Let's get you all set up so you can verify 
-            your personal account and begin setting up your profile
-          </p>
+      <div className="page-background">
+        <div className="image-section">
+          <img className="graduation-image" src='/Rectangle 85.png' alt="graduates" />
+          <div className="image-text-overlay">
+            <h2 className="welcome-text">Welcome to <br />TM Pre-University College<br /></h2>
+            <p className="welcome-message">
+              Let's get you all set up verify your Voucher and begin setting up your profile
+            </p>
+          </div>
         </div>
-        
-      </div>
 
-      <div className="login-section">
-        <div className="login-container">
-        <p className="login-title">Log In</p>
-        <p className="login-instruction">Enter your email and password to login to your account</p>
-        <input className="login-field" type="email" placeholder="Student's Mail" />
-        <input className="login-field" type="password" placeholder="Password" />
-        <button onClick={handleLoginClick} className="signIn-button" > Sign in</button>
+        <div className="login-section">
+          <div className="login-container">
+            <p className="login-title">Apply now</p>
+            <p className="login-instruction">Enter your Voucher Pin and Password to apply</p>
+            <input
+              className="login-field"
+              type="text"
+              placeholder="Voucher pin"
+              value={pin}
+              onChange={(e) => setVoucherPin(e.target.value)}
+            />
+            <input
+              className="login-field"
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button onClick={handleLoginClick} className="signIn-button"> Sign in</button>
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 }
